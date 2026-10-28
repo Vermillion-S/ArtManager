@@ -1,32 +1,20 @@
-# React + TypeScript + Vite
+# Artmanager - Maxwell Cunningham
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+wip application for doing and recording art progress.
 
-Currently, two official plugins are available:
+# Future Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- Users can create or use a pre-existing schedule to do daily drawing exercises. 
 
-## React Compiler
+- Built-in studies(?), like timed practice
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- reference library + adding your own
 
-## Expanding the Oxlint configuration
+- Allows the user to upload their practice to the app, with built in tagging and - date tracking, which is used to keep track of progress. 
 
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
+- Gives the user analytics about their progress, including how often they practice, - what categories they practiced the most, etc. 
 
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
-```
+- Account linking to automatically upload practice across social media platforms (perhaps with impressions tracked in analytic’s dashboard?)
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+
+Built using Electron/React, along with sqlite
