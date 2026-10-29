@@ -1,23 +1,32 @@
 import React from 'react'
 import {} from 'react-icons';
 import { FcSettings } from 'react-icons/fc';
+import { NavLink } from 'react-router-dom';
 
 //Navbar component
 
-const Tab = ({link, children, ...restProps}) => {
+type TabProps = {
+    link: string;
+    children: React.ReactNode;
+    [key: string]: any;
+};
+
+const Tab = ({link, children, ...restProps} : TabProps) => {
   return (
    
         <div className="flex items-center" {...restProps}>
-            <div className="flex-shrink-0">
-                <a className="text-white text-xl font-bold" href={link}>
+            <div className="flex-shrink-0 text-xl transition-all duration-200 hover:text-2xl">
+                <NavLink className={({ isActive }) => isActive ? 'text-blue-500 font-bold' : 'text-white'} to={link}>
                     {children}
-                </a>
+                </NavLink>
             </div>
         </div>
     )
 }
 
 const tabBar = () => {
+
+    
   return (
     <div>
         <nav className="bg-gray-800">
@@ -28,7 +37,7 @@ const tabBar = () => {
                     <Tab link="/analytics">Analytics</Tab>
                 </div>
 
-                <a href="/settings"><FcSettings size={"28px"}/></a>
+                <NavLink to="/settings"><FcSettings size={"28px"} className="transition duration-300 ease-in-out hover:rotate-90"/></NavLink>
             </div>
         </nav>
     </div>

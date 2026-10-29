@@ -1,6 +1,4 @@
-import { useState } from 'react'
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
-import { createRoot } from 'react-dom/client'
+import { Routes, Route, BrowserRouter } from 'react-router-dom'
 import './App.css'
 import TabBar from './components/tabBar';
 import Schedules from './pages/Schedules';
@@ -12,16 +10,17 @@ function App() {
   
   return (
     <>
-      <TabBar/>
       <div className="App">
-        <Router>
+        
+        <BrowserRouter>
+          <TabBar/>
           <Routes>
             <Route path="/" element={<Schedules />} />
             <Route path="/practice" element={<Practice />} />
             <Route path="/analytics" element={<Analytics />} />
             <Route path="/settings" element={<Settings />} />
           </Routes>
-        </Router>
+        </BrowserRouter>
       </div>
 
     </>

@@ -2,7 +2,6 @@ import { app } from 'electron';
 import path from "path";
 
 import Database from "better-sqlite3";
-import { Z_UNKNOWN } from 'zlib';
 
 class AppDatabase {
     private db;
