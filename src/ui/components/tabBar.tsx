@@ -2,6 +2,7 @@ import React from 'react'
 import {} from 'react-icons';
 import { FcSettings } from 'react-icons/fc';
 import { NavLink } from 'react-router-dom';
+import { motion as m } from 'motion/react';
 
 //Navbar component
 
@@ -15,11 +16,17 @@ const Tab = ({link, children, ...restProps} : TabProps) => {
   return (
    
         <div className="flex items-center" {...restProps}>
-            <div className="flex-shrink-0 text-xl transition-all duration-200 hover:text-2xl">
+            <m.div 
+            whileHover={{
+                scale: 1.15,
+
+                transition: {type: "spring", stiffness:400}
+            }}
+            className="flex-shrink-0 text-xl">
                 <NavLink className={({ isActive }) => isActive ? 'text-blue-500 font-bold' : 'text-white'} to={link}>
                     {children}
                 </NavLink>
-            </div>
+            </m.div>
         </div>
     )
 }
