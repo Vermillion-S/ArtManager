@@ -6,7 +6,6 @@ electron.contextBridge.exposeInMainWorld('electron', {
     
 })
 
-
 function ipcInvoke<Key extends keyof EventPayloadMapping>(
     key: Key
 ): Promise<EventPayloadMapping[Key]> {
